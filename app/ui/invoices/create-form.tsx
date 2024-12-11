@@ -14,7 +14,11 @@ import { useActionState } from 'react';
 export default function Form({ customers }: { customers: CustomerField[] }) {
     const initialState: State = {
         message: null,
-        errors: [],
+        errors: {
+            customerId: [],
+            amount: [],
+            status: [],
+        },
     };
     const [state, formAction] = useActionState(createInvoice, initialState);
     console.log(state);
